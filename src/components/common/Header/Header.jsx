@@ -6,7 +6,7 @@ export const Header = () => {
         <header>
             <div className='header-content'>
                 <div className='logo'>
-                    <i class="fa fa-apple"></i>
+                    <i className="fa fa-apple"></i>
                 </div>
                 <div className='navbar'>
                     <ul>
@@ -43,8 +43,9 @@ export const Header = () => {
                     </ul>
                 </div>
                 <div className='icons'>
-                    <i class="fa fa-shopping-bag"></i>
-                    <i class="fa fa-search"></i>
+                    <i className="fa fa-shopping-bag"></i>
+                    <i className="fa fa-search"></i>
+                    <i className="fa fa-bars menu"></i>
                 </div>
             </div>
         </header>

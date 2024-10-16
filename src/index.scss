@@ -41,6 +41,12 @@ a{
   color: var(--link-color);
   text-decoration: none;
 }
+i{
+  cursor: pointer;
+}
+i:hover{
+  color: gold;
+}
 button{
   background-color: black;
   color: white;
@@ -110,4 +116,29 @@ img{
 }
 .flex-column{
   flex-direction: column;
+}
+
+@keyframes slideEffect {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.slideEffect{
+  animation: slideEffect .5s ease-in-out;
+}
+
+@media (max-width: 1440px) {
+  // .container {
+  //     width: 100%; /* Full width on smaller screens */
+  //     padding: 0 10px;
+  // }
+}
+
+@media (max-width: 768px) {
+  // .flex-item {
+  //     flex: 1 1 100%; /* Each item takes full width on small screens */
+  // }
 }

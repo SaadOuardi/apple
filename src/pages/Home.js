@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Header } from '../components/common/Header/Header';
 import { Footer } from '../components/common/Footer/Footer';
-import Tmobile from '../assets/images/banner/t-mobile.webp'
-import Sprint from '../assets/images/banner/Sprint.png'
-import Att from '../assets/images/banner/ATT.png'
-import Verizon from '../assets/images/banner/Verizon.png'
-import Banner1 from '../assets/images/slider/banner-1.jpeg'
+import Tmobile from '../assets/images/banner/t-mobile.webp';
+import Apple from '../assets/images/logo/logo.png';
+import Sprint from '../assets/images/banner/Sprint.png';
+import Att from '../assets/images/banner/ATT.png';
+import Verizon from '../assets/images/banner/Verizon.png';
+import Banner1 from '../assets/images/slider/banner-1.webp'
 import Banner2 from '../assets/images/slider/banner-2.jpg'
-import Banner3 from '../assets/images/slider/banner-3.jpg'
+import Banner3 from '../assets/images/slider/banner-3.avif'
 import './Home.scss';
 
 const Home = () => {
     let [index, setIndex] = useState(0);
     const sliderImages = [Banner1, Banner2, Banner3];
     
-    const handleNext = () => {
-        (index !== sliderImages.length - 1) ? setIndex(index + 1) : setIndex(0);
-    }
+    const handleNext = useCallback(() => {
+        setIndex((prevIndex) => (prevIndex !== sliderImages.length - 1 ? prevIndex + 1 : 0));
+    }, [sliderImages.length]);
     const handlePrevious = () => {
         (index !== 0) ? setIndex(index - 1) : setIndex(sliderImages.length - 1);
     }
-    const handlePigination = (value) => {
+    const handlePagination = (value) => {
         setIndex(value);
     }
+    useEffect(()=>{
+        const interval = setInterval(handleNext, 5000);
+        return () => clearInterval(interval);
+    }, [handleNext])
     return (
         <>
             <Header/>
@@ -38,7 +43,7 @@ const Home = () => {
                             <p>Get up to $1000 credit after trade-in.</p>
                         </div>
                         <div>
-                            <img src={Tmobile} alt="" />
+                            <img src={Apple} alt="" />
                             <p>Get $300-$770 credit after trade-in.</p>
                         </div>
                         <div>
@@ -46,7 +51,7 @@ const Home = () => {
                             <p>Get up to $400 credit after trade-in.</p>
                         </div>
                         <div>
-                            <img src={Tmobile} alt="" />
+                            <img src={Apple} alt="" />
                             <p>Get up to $800 credit after trade-in.</p>
                         </div>
                     </div>
@@ -60,11 +65,18 @@ const Home = () => {
                             <div className='product-slider'>
                                 <div className='slider-content'>
                                     <button className='previous' onClick={handlePrevious}><i class="fa fa-angle-left"></i></button>
-                                    <img src={sliderImages[index]} alt="" />
+                                    <img 
+                                        src={sliderImages[index]} 
+                                        alt=""
+                                    />
                                     <button className='next' onClick={handleNext}><i class="fa fa-angle-right"></i></button>
                                     <div className='pagination flex-center-center'>
-                                        {sliderImages.map((Image, idx) =>(
-                                            <div key={index} className={`${idx===index ? 'pigination-dot' : 'pigination-dot'}`} onClick={() => handlePigination(idx)}></div>
+                                        {sliderImages.map((_, idx) => (
+                                            <div 
+                                                key={idx} 
+                                                className={`pagination-dot ${idx === index ? 'active' : ''}`} 
+                                                onClick={() => handlePagination(idx)}>
+                                            </div>
                                         ))}
                                     </div>
                                 </div>
