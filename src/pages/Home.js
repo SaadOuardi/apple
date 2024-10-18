@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef  } from 'react';
 import { Header } from '../components/common/Header/Header';
 import { Footer } from '../components/common/Footer/Footer';
 import Tmobile from '../assets/images/banner/t-mobile.webp';
@@ -13,19 +13,35 @@ import './Home.scss';
 
 const Home = () => {
     let [index, setIndex] = useState(0);
+    const sliderContentRef = useRef(null);
     const sliderImages = [Banner1, Banner2, Banner3];
     
     const handleNext = useCallback(() => {
         setIndex((prevIndex) => (prevIndex !== sliderImages.length - 1 ? prevIndex + 1 : 0));
+        toggleRightAnimation();
     }, [sliderImages.length]);
     const handlePrevious = () => {
         (index !== 0) ? setIndex(index - 1) : setIndex(sliderImages.length - 1);
+        toggleLeftAnimation();
     }
     const handlePagination = (value) => {
         setIndex(value);
+        toggleRightAnimation();
+    }
+    function toggleRightAnimation() {
+        const sliderContent = sliderContentRef.current;
+        sliderContent.classList.remove('slideRightEffect');
+        void sliderContent.offsetWidth;
+        sliderContent.classList.add('slideRightEffect');
+    }
+    function toggleLeftAnimation() {
+        const sliderContent = sliderContentRef.current;
+        sliderContent.classList.remove('slideLeftEffect');
+        void sliderContent.offsetWidth;
+        sliderContent.classList.add('slideLeftEffect');
     }
     useEffect(()=>{
-        const interval = setInterval(handleNext, 5000);
+        const interval = setInterval(handleNext, 5000);        
         return () => clearInterval(interval);
     }, [handleNext])
     return (
@@ -68,6 +84,7 @@ const Home = () => {
                                     <img 
                                         src={sliderImages[index]} 
                                         alt=""
+                                        ref={sliderContentRef}
                                     />
                                     <button className='next' onClick={handleNext}><i class="fa fa-angle-right"></i></button>
                                     <div className='pagination flex-center-center'>
@@ -85,142 +102,31 @@ const Home = () => {
                         <div className='product-customizations'>
                             <div className='product-details'>
                                 <div className='product-promotions flex-start-center flex-column'>
-                                    <div className='primary-container flex-center-start'>
-                                        <p>Get $40-$570 for your trade-in</p>
-                                        <button>
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                    <div className='primary-container flex-center-start'>
-                                        <p>Get $40-$570 for your trade-in</p>
-                                        <button><i class="fa fa-plus"></i></button>
-                                    </div>
+                                    <Promotion Text='Get $40-$570 for your trade-in'/>
+                                    <Promotion Text='Get 3% Daily Cash back wish Apple Card.'/>
                                 </div>
                                 <div className='product-models flex-start-center flex-column'>
-                                    <h3>Model. <span className='light'>Which is best for you?</span></h3>
-                                    <div className='model primary-container flex-start-spacebetween'>
-                                        <div className='flex-start-center flex-column'>
-                                            <h2>iPhone 14 Pro</h2>
-                                            <p>6.1-inch display</p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                From $999<br/>
-                                                or $41.56/mo.<br/>
-                                                for 24 mo. before<br/>
-                                                trade-in*
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className='model primary-container flex-start-spacebetween'>
-                                        <div className='flex-start-center flex-column'>
-                                            <h2>iPhone 14 Pro</h2>
-                                            <p>6.1-inch display</p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                From $999<br/>
-                                                or $41.56/mo.<br/>
-                                                for 24 mo. before<br/>
-                                                trade-in*
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className='model primary-container flex-start-spacebetween'>
-                                        <div className='flex-start-center flex-column'>
-                                            <h2>iPhone 14 Pro</h2>
-                                            <p>6.1-inch display</p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                From $999<br/>
-                                                or $41.56/mo.<br/>
-                                                for 24 mo. before<br/>
-                                                trade-in*
-                                            </p>
-                                        </div>
-                                    </div>
+                                    <Title Title='Model' SpanTitle='Which is best for you?'     />
+                                    <Model Name='iPhone 14 Pro' Description='6.1-inch display' RegularPrice='999' MonthlyPrice='41.56'/>
+                                    <Model Name='iPhone 14 Pro' Description='6.1-inch display' RegularPrice='999' MonthlyPrice='41.56'/>
                                 </div>
                                 <div className='product-colors flex-start-center flex-column'>
-                                    <h3>Finish. <span className='light'>Pick your favorite.</span></h3>
+                                    <Title Title='Finish' SpanTitle='Pick your favorite.'     />
                                     <span>Color</span>
                                     <div className='colors-inputs flex-center-start'>
-                                        <div title='Silver' className='color-input silverColor active'></div>
-                                        <div title='Gold' className='color-input goldColor'></div>
-                                        <div title='Deep Purple' className='color-input DeepPurpleColor'></div>
-                                        <div title='Space Black' className='color-input SpaceBlackColor'></div>
+                                        <Color Title='Silver' Class='silverColor'/>
+                                        <Color Title='Gold' Class='goldColor'/>
+                                        <Color Title='Deep Purple' Class='DeepPurpleColor'/>
+                                        <Color Title='Space Black' Class='SpaceBlackColor'/>
                                     </div>
                                 </div>
                                 <div className='product-storage flex-start-center flex-column'>
-                                    <h3>Storage. <span className='light'>How much space do you need?</span></h3>
-                                    <div className='primary-container flex-center-spacebetween'>
-                                        <div className='flex-center-center flex-column'>
-                                            <h2>128GB<sup>2</sup></h2>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                From $999<br/>
-                                                or $41.56/mo.<br/>
-                                                for 24 mo. before<br/>
-                                                trade-in*
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className='primary-container flex-center-spacebetween'>
-                                        <div className='flex-center-center flex-column'>
-                                            <h2>256GB<sup>2</sup></h2>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                From $1099<br/>
-                                                or $45.79/mo.<br/>
-                                                for 24 mo. before<br/>
-                                                trade-in*
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className='primary-container flex-center-spacebetween'>
-                                        <div className='flex-center-center flex-column'>
-                                            <h2>512GB<sup>2</sup></h2>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                From $1299<br/>
-                                                or $54.12/mo.<br/>
-                                                for 24 mo. before<br/>
-                                                trade-in*
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className='primary-container flex-center-spacebetween'>
-                                        <div className='flex-center-center flex-column'>
-                                            <h2>1TB<sup>2</sup></h2>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                From $1499<br/>
-                                                or $62.45/mo.<br/>
-                                                for 24 mo. before<br/>
-                                                trade-in*
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className='primary-container'>
-                                        <div>
-                                            <img src={Tmobile} alt="" />
-                                        </div>
-                                        <div>
-                                            <h1>
-                                                Not sure how much<br/>
-                                                storage to get?
-                                            </h1>
-                                            <p>
-                                                Get a better<br/>
-                                                understanding of how<br/>
-                                                much space you'll need.
-                                            </p>
-                                        </div>
-                                    </div>
+                                    <Title Title='Storage' SpanTitle='How much space do you need?'     />
+                                    <Storage Storage='128GB' RegularPrice='999' MonthlyPrice='41.56'    />
+                                    <Storage Storage='256GB' RegularPrice='1099' MonthlyPrice='45.79'   />
+                                    <Storage Storage='512GB' RegularPrice='1299' MonthlyPrice='54.12'   />
+                                    <Storage Storage='1TB' RegularPrice='1499' MonthlyPrice='62.45' />
+                                    <FaqVideo Tmobile={Tmobile}  />
                                 </div>
                             </div>
                         </div>
@@ -232,4 +138,77 @@ const Home = () => {
     )
 }
 
-export default Home
+function Promotion({Text}) {
+    return (
+        <div className='primary-container flex-center-start'>
+            <p>{Text}</p>
+            <button><i class="fa fa-plus"></i></button>
+        </div>
+    );
+}
+function Model({Name, Description, RegularPrice, MonthlyPrice}) {
+    return (
+        <div className='model primary-container flex-start-spacebetween'>
+            <div className='flex-start-center flex-column'>
+                <h2>{Name}</h2>
+                <p>{Description}</p>
+            </div>
+            <div>
+                <p>
+                    From ${RegularPrice}<br />
+                    or ${MonthlyPrice}/mo.<br />
+                    for 24 mo. before<br />
+                    trade-in*
+                </p>
+            </div>
+        </div>
+    );
+}
+function Storage({Storage, RegularPrice, MonthlyPrice}) {
+    return (
+        <div className='primary-container flex-center-spacebetween'>
+            <div className='flex-center-center flex-column'>
+                <h2>{Storage}<sup>2</sup></h2>
+            </div>
+            <div>
+                <p>
+                    From ${RegularPrice}<br />
+                    or ${MonthlyPrice}/mo.<br />
+                    for 24 mo. before<br />
+                    trade-in*
+                </p>
+            </div>
+        </div>
+    );
+}
+function FaqVideo({Tmobile}) {
+    return (
+        <div className='primary-container'>
+            <div>
+                <img src={Tmobile} alt="" />
+            </div>
+            <div>
+                <h1>
+                    Not sure how much<br />
+                    storage to get?
+                </h1>
+                <p>
+                    Get a better<br />
+                    understanding of how<br />
+                    much space you'll need.
+                </p>
+            </div>
+        </div>
+    );
+}
+function Title({Title, SpanTitle}) {
+    return (
+        <h3>{Title}. <span className='light'>{SpanTitle}</span></h3>
+    );
+}
+function Color({Title, Class}) {
+    return (
+        <div title={Title} className={`color-input ${Class}`}></div>
+    );
+}
+    export default Home;

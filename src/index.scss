@@ -118,16 +118,31 @@ img{
   flex-direction: column;
 }
 
-@keyframes slideEffect {
+@keyframes slideLeftEffect {
   0%{
     opacity: 0;
+    transform: translateX(0);
   }
   100%{
     opacity: 1;
+    transform: translateX(100%)
   }
 }
-.slideEffect{
-  animation: slideEffect .5s ease-in-out;
+@keyframes slideRightEffect {
+  0%{
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+.slideRightEffect{
+  animation: slideRightEffect .5s ease-in-out;
+}
+.slideLeftEffect{
+  animation: slideLeftEffect .5s ease-in-out;
 }
 
 @media (max-width: 1440px) {
