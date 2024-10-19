@@ -207,8 +207,14 @@ function Title({Title, SpanTitle}) {
     );
 }
 function Color({Title, Class}) {
+    const colorContentRef = useRef(null);
+    const handleClick = () => {
+        // colorContentRef.current.classList = `color-input ${Class}`;
+        // void colorContentRef.current.offsetWidth;
+        colorContentRef.current.classList = `color-input ${Class} active`;
+    }
     return (
-        <div title={Title} className={`color-input ${Class}`}></div>
+        <div title={Title} className={`color-input ${Class}`} onClick={handleClick} ref={colorContentRef}></div>
     );
 }
-    export default Home;
+export default Home;

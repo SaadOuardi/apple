@@ -62,6 +62,8 @@ img{
   width: 200px;
   border-radius: 9px;
 }
+
+// Containers //
 .primary-container{
   height: fit-content;
   width: fit-content;
@@ -78,6 +80,7 @@ img{
 .secondary-padding{
   padding: 10px;
 }
+
 // Flex Box //
 .flex-center-center{
   display: flex;
@@ -118,6 +121,7 @@ img{
   flex-direction: column;
 }
 
+// Animations //
 @keyframes slideLeftEffect {
   0%{
     opacity: 0;
@@ -151,7 +155,6 @@ img{
   //     padding: 0 10px;
   // }
 }
-
 @media (max-width: 768px) {
   // .flex-item {
   //     flex: 1 1 100%; /* Each item takes full width on small screens */

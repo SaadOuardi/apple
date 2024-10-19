@@ -1,0 +1,21 @@
+.material-selector {
+    display: flex;
+    gap: 1rem;
+}
+
+.material-item {
+    border: 2px solid transparent;
+    padding: 10px;
+    cursor: pointer;
+    transition: border 0.3s;
+}
+
+.material-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.material-item.selected {
+    border-color: #3498db;
+}
