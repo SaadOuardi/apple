@@ -129,6 +129,34 @@
         }
     }
 }
+.faq{
+    padding: 0;
+    position: relative;
+    .faq-image{
+        height: 100%;
+        width: 40%;
+        img{
+            height: 100%;
+            width: 100%;
+            border-radius: 0;
+        }
+    }
+    .faq-title-description{
+        h4{
+
+        }
+        p{
+
+        }
+    }
+    button{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px;
+        border-radius: 100px;
+    }
+}
 
 /*----------------------MOBILE DEVICES----------------------*/
 @media screen and (max-width: 768px){

@@ -20,30 +20,36 @@ const Home = () => {
         setIndex((prevIndex) => (prevIndex !== sliderImages.length - 1 ? prevIndex + 1 : 0));
         toggleRightAnimation();
     }, [sliderImages.length]);
+
     const handlePrevious = () => {
         (index !== 0) ? setIndex(index - 1) : setIndex(sliderImages.length - 1);
         toggleLeftAnimation();
     }
+
     const handlePagination = (value) => {
         setIndex(value);
         toggleRightAnimation();
     }
+
     function toggleRightAnimation() {
         const sliderContent = sliderContentRef.current;
         sliderContent.classList.remove('slideRightEffect');
         void sliderContent.offsetWidth;
         sliderContent.classList.add('slideRightEffect');
     }
+
     function toggleLeftAnimation() {
         const sliderContent = sliderContentRef.current;
         sliderContent.classList.remove('slideLeftEffect');
         void sliderContent.offsetWidth;
         sliderContent.classList.add('slideLeftEffect');
     }
+
     useEffect(()=>{
         const interval = setInterval(handleNext, 5000);        
         return () => clearInterval(interval);
     }, [handleNext])
+    
     return (
         <>
             <Header/>
@@ -126,7 +132,7 @@ const Home = () => {
                                     <Storage Storage='256GB' RegularPrice='1099' MonthlyPrice='45.79'   />
                                     <Storage Storage='512GB' RegularPrice='1299' MonthlyPrice='54.12'   />
                                     <Storage Storage='1TB' RegularPrice='1499' MonthlyPrice='62.45' />
-                                    <FaqVideo Tmobile={Tmobile}  />
+                                    <Faq Image={Apple} Keyword="storage"  />
                                 </div>
                             </div>
                         </div>
@@ -181,23 +187,24 @@ function Storage({Storage, RegularPrice, MonthlyPrice}) {
         </div>
     );
 }
-function FaqVideo({Tmobile}) {
+function Faq({Image, Keyword}) {
     return (
-        <div className='primary-container'>
-            <div>
-                <img src={Tmobile} alt="" />
+        <div className='faq primary-container flex-center-start'>
+            <div className='faq-image'>
+                <img src={Image} alt="" />
             </div>
-            <div>
-                <h1>
-                    Not sure how much<br />
-                    storage to get?
-                </h1>
-                <p>
+            <div className='faq-title-description'>
+                <h4>
+                        Not sure how much<br />
+                        {Keyword} to get?                
+                </h4>
+                <p className='light'>
                     Get a better<br />
                     understanding of how<br />
-                    much space you'll need.
+                    much {Keyword} you'll need.
                 </p>
             </div>
+            <button><i class="fa fa-plus"></i></button>
         </div>
     );
 }

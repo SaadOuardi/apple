@@ -19,8 +19,8 @@ const MaterialSelector = () => {
             {materials.map((material) => (
                 <div
                     key={material.id}
-                    className={`material-item ${selectedMaterial === material.name ? 'selected' : ''}`}
-                    onClick={() => setSelectedMaterial(material.name)}
+                    className={`material-item ${selectedMaterial.name === material.name ? 'selected' : ''}`}
+                    onClick={() => setSelectedMaterial(material)}
                 >
                     <img src={material.img} alt={material.name} />
                     <span>{material.name}</span>
