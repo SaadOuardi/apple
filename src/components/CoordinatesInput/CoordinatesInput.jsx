@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { CirclePositionContext } from '../../contexts/CirclePositionContext';
+import { MaterialContext } from '../../contexts/MaterialContext';
 import './CoordinatesInput.scss';
 
 const CoordinatesInput = () => {
     const { position, setPosition } = useContext(CirclePositionContext);
+    const { selectedMaterial } = useContext(MaterialContext); // Access the selected material
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -13,6 +15,10 @@ const CoordinatesInput = () => {
         }));
     };
 
+    const handleLogData = () => {
+        console.log(`X Coordinate (pixels): ${position.x}px, Y Coordinate (pixels): ${position.y}px`);
+        console.log(`Chosen Material: ${selectedMaterial.name}`);
+    };
     return (
         <div className="coordinates-input">
         <label>
@@ -33,6 +39,9 @@ const CoordinatesInput = () => {
                 onChange={handleInputChange}
             />
         </label>
+        <button onClick={handleLogData} className="log-button">
+                Log Coordinates
+            </button>
         </div>
     );
 };

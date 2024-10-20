@@ -9,7 +9,7 @@ import Verizon from '../assets/images/banner/Verizon.png';
 import Banner1 from '../assets/images/slider/banner-1.webp'
 import Banner2 from '../assets/images/slider/banner-2.jpg'
 import Banner3 from '../assets/images/slider/banner-3.avif'
-import './Home.scss';
+import './main.scss';
 
 const Home = () => {
     let [index, setIndex] = useState(0);
