@@ -1,5 +1,5 @@
 {
-  "gh-pages":"https://saadouardi.github.io/apple/",
+  "homepage": "https://saadouardi.github.io/apple",
   "name": "apple",
   "version": "1.0.0",
   "description": "",
@@ -19,6 +19,7 @@
     "@testing-library/jest-dom": "^6.6.2",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
+    "apple": "file:",
     "gh-pages": "^6.2.0",
     "react": "^18.3.1",
     "react-dnd": "^16.0.1",
