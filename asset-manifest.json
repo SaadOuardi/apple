@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/apple/static/css/main.45a60cab.css",
-    "main.js": "/apple/static/js/main.3637aba7.js",
-    "static/js/453.fa7abe88.chunk.js": "/apple/static/js/453.fa7abe88.chunk.js",
-    "static/media/Sprint.png": "/apple/static/media/Sprint.31c0d088616903867ce5.png",
-    "static/media/banner-2.jpg": "/apple/static/media/banner-2.140ce49922b46160c474.jpg",
-    "static/media/empty-burger.jpg": "/apple/static/media/empty-burger.8db3d7d31fb602473de4.jpg",
-    "static/media/steel.jpg": "/apple/static/media/steel.1ee2b6923eb981cb7171.jpg",
-    "static/media/nugget.jpg": "/apple/static/media/nugget.6f3db0debdbb854f3463.jpg",
-    "static/media/beef.jpg": "/apple/static/media/beef.509050b89ba13e9bf021.jpg",
-    "static/media/wood.avif": "/apple/static/media/wood.92b6f809c7cb235d7e24.avif",
-    "static/media/banner-1.webp": "/apple/static/media/banner-1.7d550407dc00e25d30e4.webp",
-    "static/media/marble.jpg": "/apple/static/media/marble.62750a970adf559fd40e.jpg",
-    "static/media/banner-3.avif": "/apple/static/media/banner-3.62afad6ddce45da1bd19.avif",
-    "static/media/cheese.jpg": "/apple/static/media/cheese.de070bcd829b5937d1db.jpg",
-    "static/media/logo.png": "/apple/static/media/logo.c959a5a82074a98d36e7.png",
-    "static/media/ketchup.avif": "/apple/static/media/ketchup.f60b6c70350ad50bd50a.avif",
-    "static/media/t-mobile.webp": "/apple/static/media/t-mobile.ed5ed2107d8b34fa9377.webp",
-    "index.html": "/apple/index.html",
-    "main.45a60cab.css.map": "/apple/static/css/main.45a60cab.css.map",
-    "main.3637aba7.js.map": "/apple/static/js/main.3637aba7.js.map",
-    "453.fa7abe88.chunk.js.map": "/apple/static/js/453.fa7abe88.chunk.js.map"
+    "main.css": "/static/css/main.007d18fe.css",
+    "main.js": "/static/js/main.18e77608.js",
+    "static/js/488.49d060a4.chunk.js": "/static/js/488.49d060a4.chunk.js",
+    "static/media/Sprint.png": "/static/media/Sprint.31c0d088616903867ce5.png",
+    "static/media/banner-2.jpg": "/static/media/banner-2.140ce49922b46160c474.jpg",
+    "static/media/empty-burger.jpg": "/static/media/empty-burger.8db3d7d31fb602473de4.jpg",
+    "static/media/steel.jpg": "/static/media/steel.1ee2b6923eb981cb7171.jpg",
+    "static/media/nugget.jpg": "/static/media/nugget.6f3db0debdbb854f3463.jpg",
+    "static/media/beef.jpg": "/static/media/beef.509050b89ba13e9bf021.jpg",
+    "static/media/wood.avif": "/static/media/wood.92b6f809c7cb235d7e24.avif",
+    "static/media/banner-1.webp": "/static/media/banner-1.7d550407dc00e25d30e4.webp",
+    "static/media/marble.jpg": "/static/media/marble.62750a970adf559fd40e.jpg",
+    "static/media/banner-3.avif": "/static/media/banner-3.62afad6ddce45da1bd19.avif",
+    "static/media/cheese.jpg": "/static/media/cheese.de070bcd829b5937d1db.jpg",
+    "static/media/logo.png": "/static/media/logo.c959a5a82074a98d36e7.png",
+    "static/media/ketchup.avif": "/static/media/ketchup.f60b6c70350ad50bd50a.avif",
+    "static/media/t-mobile.webp": "/static/media/t-mobile.ed5ed2107d8b34fa9377.webp",
+    "index.html": "/index.html",
+    "main.007d18fe.css.map": "/static/css/main.007d18fe.css.map",
+    "main.18e77608.js.map": "/static/js/main.18e77608.js.map",
+    "488.49d060a4.chunk.js.map": "/static/js/488.49d060a4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.45a60cab.css",
-    "static/js/main.3637aba7.js"
+    "static/css/main.007d18fe.css",
+    "static/js/main.18e77608.js"
   ]
 }
