@@ -115,6 +115,14 @@ const Home = () => {
                                     <Title Title='Model' SpanTitle='Which is best for you?'     />
                                     <Model Name='iPhone 14 Pro' Description='6.1-inch display' RegularPrice='999' MonthlyPrice='41.56'/>
                                     <Model Name='iPhone 14 Pro' Description='6.1-inch display' RegularPrice='999' MonthlyPrice='41.56'/>
+                                    <div className='help primary-container'>
+                                        <h2>Need help choosing a model?</h2>
+                                        <p>
+                                            Explore the difference in screen size and<br/>
+                                            battery life.
+                                        </p>
+                                        <button><i class="fa fa-plus"></i></button>
+                                    </div>
                                 </div>
                                 <div className='product-colors flex-start-center flex-column'>
                                     <Title Title='Finish' SpanTitle='Pick your favorite.'     />
@@ -154,7 +162,7 @@ function Promotion({Text}) {
 }
 function Model({Name, Description, RegularPrice, MonthlyPrice}) {
     return (
-        <div className='model primary-container flex-start-spacebetween'>
+        <div className='model primary-container secondary-container flex-start-spacebetween'>
             <div className='flex-start-center flex-column'>
                 <h2>{Name}</h2>
                 <p>{Description}</p>
@@ -172,7 +180,7 @@ function Model({Name, Description, RegularPrice, MonthlyPrice}) {
 }
 function Storage({Storage, RegularPrice, MonthlyPrice}) {
     return (
-        <div className='primary-container flex-center-spacebetween'>
+        <div className='primary-container secondary-container flex-center-spacebetween'>
             <div className='flex-center-center flex-column'>
                 <h2>{Storage}<sup>2</sup></h2>
             </div>
@@ -189,7 +197,7 @@ function Storage({Storage, RegularPrice, MonthlyPrice}) {
 }
 function Faq({Image, Keyword}) {
     return (
-        <div className='faq primary-container flex-center-start'>
+        <div className='faq primary-container flex-center-spacebetween'>
             <div className='faq-image'>
                 <img src={Image} alt="" />
             </div>
@@ -216,8 +224,6 @@ function Title({Title, SpanTitle}) {
 function Color({Title, Class}) {
     const colorContentRef = useRef(null);
     const handleClick = () => {
-        // colorContentRef.current.classList = `color-input ${Class}`;
-        // void colorContentRef.current.offsetWidth;
         colorContentRef.current.classList = `color-input ${Class} active`;
     }
     return (

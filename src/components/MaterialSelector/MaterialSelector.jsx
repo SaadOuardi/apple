@@ -15,7 +15,8 @@ const MaterialSelector = () => {
     const { selectedMaterial, setSelectedMaterial } = useContext(MaterialContext);
 
     return (
-        <div className="material-selector">
+        <div className="material-selector flex-center-center flex-column">
+            <h1>Meterial Selection</h1>
             {materials.map((material) => (
                 <div
                     key={material.id}

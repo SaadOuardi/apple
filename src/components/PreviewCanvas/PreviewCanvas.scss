@@ -1,26 +1,25 @@
 .preview-canvas {
   position: relative;
-  width: 400px;
+  width: 800px;
   height: 400px;
   border: 1px solid #ddd;
+  .material-preview {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: relative;
+    .draggable-circle {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #00aaff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      cursor: pointer;
+    }
+  }
 }
 
-.material-preview {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  position: relative;
-}
-
-.draggable-circle {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: #00aaff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  cursor: pointer;
-}
