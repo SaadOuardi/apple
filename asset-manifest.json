@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.007d18fe.css",
-    "main.js": "/static/js/main.18e77608.js",
+    "main.js": "/static/js/main.a613aeb8.js",
     "static/js/488.49d060a4.chunk.js": "/static/js/488.49d060a4.chunk.js",
     "static/media/Sprint.png": "/static/media/Sprint.31c0d088616903867ce5.png",
     "static/media/banner-2.jpg": "/static/media/banner-2.140ce49922b46160c474.jpg",
@@ -19,11 +19,11 @@
     "static/media/t-mobile.webp": "/static/media/t-mobile.ed5ed2107d8b34fa9377.webp",
     "index.html": "/index.html",
     "main.007d18fe.css.map": "/static/css/main.007d18fe.css.map",
-    "main.18e77608.js.map": "/static/js/main.18e77608.js.map",
+    "main.a613aeb8.js.map": "/static/js/main.a613aeb8.js.map",
     "488.49d060a4.chunk.js.map": "/static/js/488.49d060a4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.007d18fe.css",
-    "static/js/main.18e77608.js"
+    "static/js/main.a613aeb8.js"
   ]
 }
