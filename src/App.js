@@ -6,7 +6,7 @@ import BurgerCustomization from './pages/BurgerCustomization';
 
 const App = () => {
   return (
-    <Router basename='/apple'>
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/customization" element={<Customization />} />
